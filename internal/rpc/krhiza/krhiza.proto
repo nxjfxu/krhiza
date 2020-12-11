@@ -1,0 +1,49 @@
+// K-Rhiza RPC Protocol
+
+syntax = "proto3";
+
+option go_package = "github.com/nxjfxu/krhiza";
+
+
+package krhiza;
+
+service KRhiza {
+  rpc Confirm(ClientInfo) returns (ServerInfo) {}
+
+  rpc Send(Message) returns (SendResult) {}
+  rpc Recv(Index) returns (RecvResult) {}
+}
+
+message Message {
+  bytes index = 1;
+  bytes body  = 2;
+}
+
+message Failed {
+}
+
+message RecvResult {
+  oneof result {
+    Message message = 1;
+    Failed failed = 2;
+  }
+}
+
+
+message Index {
+  bytes index = 1;
+}
+
+message SendResult {
+  int32 sent = 1;
+}
+
+
+message ClientInfo {
+  string name = 1;
+}
+
+message ServerInfo {
+  string name = 1;
+}
+

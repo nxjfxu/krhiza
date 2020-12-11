@@ -1,0 +1,66 @@
+// Kademlia RPC Protocol
+
+syntax = "proto3";
+
+option go_package = "github.com/nxjfxu/krhiza";
+
+
+package krhiza;
+
+service Kademlia {
+  rpc Ping(PingMessage) returns (PingConfirm) {}
+  rpc Store(KeyValuePair) returns (StoreConfirm) {}
+  rpc FindNode(Key) returns (FindNodeResult) {}
+  rpc FindValue(Key) returns (FindValueResult) {}
+}
+
+message Source {
+  bytes id = 1;
+  string address = 2;
+  string port = 3;
+}
+
+message PingMessage {
+  Source source = 1;
+}
+
+message PingConfirm {
+  bytes sanity = 1;
+}
+
+message KeyValuePair {
+  Source source = 1;
+
+  bytes key = 2;
+  bytes value = 3;
+}
+
+message StoreConfirm {
+  bytes sanity = 1;
+}
+
+message Key {
+  Source source = 1;
+
+  bytes key = 2;
+}
+
+message NodeInfo {
+  bytes id = 1;
+  string address = 2;
+}
+
+message FindNodeResult {
+  bytes sanity = 1;
+  repeated NodeInfo results = 2;
+}
+
+message FindValueResult {
+  bytes sanity = 1;
+  oneof result {
+    bytes value = 2;
+    FindNodeResult nodes = 3;
+  }
+}
+
+

@@ -1,0 +1,63 @@
+#!/bin/bash
+
+echo "0.93  0.98"
+go run churn.go -count 120 -run 600 -f-threshold 0.93 -f-threshold-max 0.98 -k 12 -stabilization 240
+killall -r krhiza
+sleep 10
+
+echo "0.932 0.981"
+go run churn.go -count 120 -run 600 -f-threshold 0.932 -f-threshold-max 0.981 -k 12 -stabilization 240
+killall -r krhiza
+sleep 10
+
+echo "0.934 0.982"
+go run churn.go -count 120 -run 600 -f-threshold 0.934 -f-threshold-max 0.982 -k 12 -stabilization 240
+killall -r krhiza
+sleep 10
+
+echo "0.936 0.983"
+go run churn.go -count 120 -run 600 -f-threshold 0.936 -f-threshold-max 0.983 -k 12 -stabilization 240
+killall -r krhiza
+sleep 10
+
+echo "0.938 0.984"
+go run churn.go -count 120 -run 600 -f-threshold 0.938 -f-threshold-max 0.984 -k 12 -stabilization 240
+killall -r krhiza
+sleep 10
+
+echo "0.94  0.985"
+go run churn.go -count 120 -run 600 -f-threshold 0.94 -f-threshold-max 0.985 -k 12 -stabilization 240
+killall -r krhiza
+sleep 10
+
+echo "0.942 0.986"
+go run churn.go -count 120 -run 600 -f-threshold 0.942 -f-threshold-max 0.986 -k 12 -stabilization 240
+killall -r krhiza
+sleep 10
+
+echo "0.944 0.987"
+go run churn.go -count 120 -run 600 -f-threshold 0.944 -f-threshold-max 0.987 -k 12 -stabilization 240
+killall -r krhiza
+sleep 10
+
+echo "0.946 0.988"
+go run churn.go -count 120 -run 600 -f-threshold 0.946 -f-threshold-max 0.988 -k 12 -stabilization 240
+killall -r krhiza
+sleep 10
+
+echo "0.948 0.989"
+go run churn.go -count 120 -run 600 -f-threshold 0.948 -f-threshold-max 0.989 -k 12 -stabilization 240
+killall -r krhiza
+sleep 10
+
+echo "0.95  0.99"
+go run churn.go -count 120 -run 600 -f-threshold 0.95 -f-threshold-max 0.99 -k 12 -stabilization 240
+killall -r krhiza
+sleep 10
+
+echo "0.952 0.991"
+go run churn.go -count 120 -run 600 -f-threshold 0.952 -f-threshold-max 0.991 -k 12 -stabilization 240
+killall -r krhiza
+sleep 10
+
+

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+for i in {6..17}; do
+    echo $i
+    go run churn.go -count 120 -run 600 -f-threshold 0.93 -f-threshold-max 0.98 -k $i -stabilization 240
+
+    killall -r krhiza
+    sleep 10
+
+    echo " - "
+    echo " - "
+done
+
+
